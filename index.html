@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <h1>Minha Calculadora</h1>
+
+    <h2 id="sinal"> Somar </h2>
+ 
+    Primeiro Número<br />
+    <input id="n1" type="number" /><br />
+     <p>+</p>
+    Segundo Número<br />
+    <input id="n2" type="number" /><br /><br />
+
+    <select id="escolher" onchange="optype()">
+        <option>
+            Somar
+        </option>
+        <option>
+            Subtrair
+        </option>
+        <option>
+            Multiplicar
+        </option>
+        <option>
+            Dividir
+        </option>
+        <br /><br />
+    </select>
+    <button onclick="calcular()">Calcular</button>
+    <br /><br />
+    O resultado é </var> <span></span>
+
+    <script>
+
+        var n1 = document.querySelector('#n1')
+        var n2 = document.querySelector('#n2')
+        var resultado = document.querySelector ('span')
+
+        function optype(){
+            let op = document.getElementById("escolher").value;
+            document.getElementById("sinal").innerHTML = op;
+        }
+
+        function calcular() {
+            var e = document.getElementById('escolher');
+            var chs = e.value;
+
+            switch (chs) {
+                case 'Somar':
+                    somar();
+                    break;
+                case 'Subtrair':
+                    subtrair();
+                    break
+                case 'Multiplicar':
+                    multiplicar();
+                    break
+                case 'Dividir':
+                    dividir();
+                    break
+            }
+
+        function somar() {
+            resultado.innerHTML = parseInt(n1.value) + parseInt(n2.value)
+        }
+        function subtrair() {
+            resultado.innerHTML = parseInt(n1.value) - parseInt(n2.value)
+        }
+        function multiplicar() {
+            resultado.innerHTML = parseInt(n1.value) * parseInt(n2.value)
+        }
+        function dividir() {
+            if(parseInt(n2.value)==0){
+                alert("Não é possível dividir por zero")
+            
+            }  
+            else{
+                resultado.innerHTML = parseInt(n1.value) / parseInt(n2.value)
+            
+            }  
+
+           
+        }
+            
+
+
+        }
+
+</script>
+
+</body>
+</html>

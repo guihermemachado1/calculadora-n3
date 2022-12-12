@@ -1,0 +1,19 @@
+h1 {
+    background-color: rgb(108, 160, 219);
+    text-align: center;
+    position: relative;
+    border: solid 2px black;
+    font-size: 1.5em
+}
+
+body{
+    text-align: center;
+    font-size: 1.5em;
+    background-color: rgb(179, 193, 204);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+button{
+    background-color: rgb(108, 160, 219);
+    font-weight: bold;
+}
